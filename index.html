@@ -1,18 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link href="https://amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet" />
-        <script src="https://amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
-    </head>
-    <body>
-        <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="848" height="480" data-setup='{"nativeControlsForTouch": false}'>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <link href="https://amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet" />
+  <script src="https://amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .login-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width:120px;
+}
+
+.topnav .login-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background-color: #555;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background-color: green;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="login-container">
+    <form action="/action_page.php">
+      <a href="https://contosob2c1046.b2clogin.com/contosob2c1046.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signinsingup1&client_id=8c768213-5705-485f-94fd-113650abfceb&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwebvideodemo.azurewebsites.net&scope=openid&response_type=code&prompt=login">Login/SignUp</a>
+
+    </form>
+  </div>
+</div>
+
+<div style="padding-left:16px">
+  <center><h2>Video Streaming Platform</h2>
+      <p>This is the Sample Video ,u can login and get unlimited videos</p>
+
+  <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="848" height="480" data-setup='{"nativeControlsForTouch": false}'>
             <source src="https://mediaservice1046-usea.streaming.media.azure.net/c3b89b46-9419-4043-96c2-d2d8cf7de70a/video1.ism/manifest(format=m3u8-aapl)" type="application/vnd.ms-sstr+xml" />
         </video>
-        <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="848" height="480" data-setup='{"nativeControlsForTouch": false}'>
-            <source src="https://mediaservice1046-usea.streaming.media.azure.net/6267082c-732d-4df8-bc4e-0fa89122c18d/video2.ism/manifest" type="application/vnd.ms-sstr+xml" />
-        </video>
-        
-        
 
-    </body>
+
+  </center>
+</div>
+
+</body>
 </html>
